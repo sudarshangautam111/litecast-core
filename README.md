@@ -75,12 +75,20 @@ node server.js
 
 ```
 
+### 4. Broadcast Endpoint 
+
+```bash
+{your_domain}/broadcast
+Ex : http://localhost:3000/broadcast
+
+```
+
 ### 📡 Broadcast Example (POST Request)
 Send an event using curl or any backend (Node, PHP, Python):
 
 ```bash
-curl -X POST http://localhost:3000/broadcast \
--H "Content-Type: application/json" \
+curl -X POST http://localhost:3000/broadcast
+-H "Content-Type: application/json"
 -d '{
   "api_key": "secret123",
   "channel": "chat",
