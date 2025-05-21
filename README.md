@@ -1,6 +1,26 @@
 # litecast-core
  ⚡ Framework-agnostic, ultra-light WebSocket broadcast server that runs on any cPanel or VPS — perfect for real-time apps with zero overhead.
 
+ ---
+
+## 🚀✨ Pro Version Coming Soon
+
+> 🔐 **Upgrade to Pro** for advanced features:
+>
+> - 🎛️ **Dashboard UI**
+> - 🔑 **API Key Generator & Manager**
+> - ➕ **Add / Remove Projects Easily**
+> - 📜 **Real-time Log Viewer**
+>
+> 🧑‍💻 Built specifically for **developers** — so you can plug in **Litecast Pro** instantly into any project and start broadcasting events with zero hassle.
+>
+> 📊 The Pro version provides a full control panel to **generate projects**, manage **API keys**, and **monitor activity logs** — giving you better visibility and management of your real-time infrastructure.
+
+> 📦 Stay tuned — **Litecast Pro** is coming to power your real-time apps like never before!
+
+---
+
+
 # ⚡️ Litecast Core v1.0 — Community Edition
 
 Litecast Core is a lightweight, real-time WebSocket broadcast server that works with **any web project** — whether you're using Laravel, WordPress, plain HTML, Flask, or something else.
