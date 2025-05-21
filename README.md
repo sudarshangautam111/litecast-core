@@ -80,9 +80,9 @@ Send an event using curl or any backend (Node, PHP, Python):
 
 ```bash
 curl -X POST http://localhost:3000/broadcast \
--H "Authorization: secret123" \
 -H "Content-Type: application/json" \
 -d '{
+  "api_key": "secret123",
   "channel": "chat",
   "event": "message",
   "data": {
