@@ -29,7 +29,7 @@ You can connect from **any front-end** using JavaScript and instantly listen to 
 
 ---
 
-## 🚀 Quick Start Guide
+### 🚀 Quick Start Guide
 
 ### 1. Download & Set Up
 
@@ -39,16 +39,22 @@ cd litecast-core/server
 npm install
 cp .env.example .env
 
+```
+
 ### 2. Create Your .env File
 
 ```bash
 PORT=3000
 API_KEY=secret123
 
-## 3. Run the Server
+```
+
+### 3. Run the Server
 
 ```bash
 node server.js
+
+```
 
 ### 📡 Broadcast Example (POST Request)
 Send an event using curl or any backend (Node, PHP, Python):
@@ -65,7 +71,7 @@ curl -X POST http://localhost:3000/broadcast \
     "message": "Hello from Litecast"
   }
 }'
-
+```
 
 ### Example HTML Client
 examples/basic.html
@@ -96,3 +102,5 @@ examples/basic.html
 </html>
 
 *Open this in your browser and see updates instantly.
+
+```
