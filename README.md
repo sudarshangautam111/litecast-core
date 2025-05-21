@@ -3,7 +3,7 @@
 
  ---
 
-## 🚀✨ Pro Version Coming Soon
+## 🚀✨ Pro Version Coming Soon.. 🎉🎉🎉
 
 > 🔐 **Upgrade to Pro** for advanced features:
 >
