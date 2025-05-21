@@ -1,10 +1,21 @@
 {
   "name": "litecast-server",
   "version": "1.0.0",
+  "description": "A lightweight WebSocket broadcast server that runs even on cPanel.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [
+    "websocket",
+    "broadcast",
+    "realtime",
+    "cpanel",
+    "litecast"
+  ],
+  "author": "Snrox",
+  "license": "MIT",
+  
   "dependencies": {
     "express": "^4.18.2",
     "ws": "^8.13.0",
