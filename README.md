@@ -39,3 +39,60 @@ cd litecast-core/server
 npm install
 cp .env.example .env
 
+### 2. Create Your .env File
+
+```bash
+PORT=3000
+API_KEY=secret123
+
+## 3. Run the Server
+
+```bash
+node server.js
+
+### 📡 Broadcast Example (POST Request)
+Send an event using curl or any backend (Node, PHP, Python):
+
+```bash
+curl -X POST http://localhost:3000/broadcast \
+-H "Authorization: secret123" \
+-H "Content-Type: application/json" \
+-d '{
+  "channel": "chat",
+  "event": "message",
+  "data": {
+    "user": "John",
+    "message": "Hello from Litecast"
+  }
+}'
+
+
+### Example HTML Client
+examples/basic.html
+
+```bash
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Litecast Client</title>
+</head>
+<body>
+  <h2>💬 Chat Channel Realtime Updates</h2>
+  <pre id="log"></pre>
+
+  <script>
+    const socket = new WebSocket("ws://localhost:3000");
+
+    socket.onopen = () => {
+      socket.send(JSON.stringify({ subscribe: "chat" }));
+    };
+
+    socket.onmessage = (event) => {
+      const msg = JSON.parse(event.data);
+      document.getElementById('log').innerText += `\n${msg.event}: ${JSON.stringify(msg.data)}`;
+    };
+  </script>
+</body>
+</html>
+
+*Open this in your browser and see updates instantly.
