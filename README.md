@@ -37,7 +37,6 @@ You can connect from **any front-end** using JavaScript and instantly listen to 
 git clone https://github.com/Snrox/litecast-core.git
 cd litecast-core/server
 npm install
-cp .env.example .env
 
 ```
 
