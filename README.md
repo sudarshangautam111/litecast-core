@@ -23,15 +23,15 @@
 
 # ⚡️ Litecast Core v1.0 - Community Edition
 
-Litecast Core is a lightweight, real-time WebSocket broadcast server that works with **any web project** — whether you're using Laravel, WordPress, plain HTML, Flask, or something else.
+Litecast Core is a lightweight, real-time WebSocket broadcast server that works with **any web project** - whether you're using Laravel, WordPress, plain HTML, Flask, or something else.
 
-> ✅ Built for developers who want fast, reliable, and **zero-bloat** realtime communication — even on **shared hosting or cPanel**.
+> ✅ Built for developers who want fast, reliable, and **zero-bloat** realtime communication - even on **shared hosting or cPanel**.
 
 ---
 
 ## 🌟 What is Litecast?
 
-Litecast is a **self-hosted WebSocket server** that lets your backend **broadcast live data** to connected users — like chat messages, new orders, or notifications — using just a simple HTTP request.
+Litecast is a **self-hosted WebSocket server** that lets your backend **broadcast live data** to connected users - like chat messages, new orders, or notifications - using just a simple HTTP request.
 
 You can connect from **any front-end** using JavaScript and instantly listen to those updates in real-time.
 
