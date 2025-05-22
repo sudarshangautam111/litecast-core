@@ -3,6 +3,16 @@
 
  ---
 
+
+## 🎬 Live Demo
+
+[![Watch the video](https://img.youtube.com/vi/_VOarXOzk-k/maxresdefault.jpg)](https://www.youtube.com/watch?v=_VOarXOzk-k)
+
+▶️ **Watch how Litecast works in real-time!**  
+No Redis. No root. No artisan. Just simple WebSockets for cPanel and VPS.
+
+
+
 ## 🚀✨ Pro Version Coming Soon.. 🎉🎉🎉
 
 > 🔐 **Upgrade to Pro** for advanced features:
