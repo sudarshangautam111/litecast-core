@@ -55,7 +55,7 @@ You can connect from **any front-end** using JavaScript and instantly listen to 
 
 ```bash
 git clone https://github.com/Snrox/litecast-core.git
-cd litecast-core/server
+cd litecast-core
 npm install
 
 ```
